@@ -21,7 +21,9 @@ const createBoxes = (amount) => {
   }
   return color;
 };
- 
+const destroyBoxes = () => {
+    boxInto.innerHTML = '';
+}
 controlsBox.addEventListener('click', e => { 
   if (e.target.localName === 'input')
   {
@@ -34,10 +36,7 @@ controlsBox.addEventListener('click', e => {
   }
   if (e.target.dataset.destroy === '')
   {
-    boxInto.innerHTML = '';
-    console.log(boxInto);
+    destroyBoxes();
   }
-
-
 });
 
