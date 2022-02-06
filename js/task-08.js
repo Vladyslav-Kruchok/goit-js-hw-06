@@ -15,7 +15,11 @@ loginForm.addEventListener('submit', e => {
     {
         alert('всі поля повинні бути заповнені');
     }
-    console.log({email: `${email.value}`,password: `${password.value}` })
-    e.currentTarget.reset();
+    else
+    {
+        console.log({email: `${email.value}`,password: `${password.value}` })
+        e.currentTarget.reset();
+    }
+
 })
 
