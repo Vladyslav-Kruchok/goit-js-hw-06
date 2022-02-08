@@ -16,11 +16,13 @@ const ingredients = [
 ];
 
 const ingredients_ul = document.querySelector('#ingredients');
-
-ingredients.forEach(item => {
-  const li = document.createElement('li');
-  li.classList.add('item');
-  li.textContent = item;
-  
-  ingredients_ul.append(li);
-});
+const CreateLi = (item) => {
+    const li = document.createElement('li');
+    li.classList.add('item');
+    li.textContent = item;
+    return li.outerHTML;
+};
+const str = ingredients
+  .map((item) => CreateLi(item))
+  .join('\n');
+ingredients_ul.insertAdjacentHTML('beforeend', str);
